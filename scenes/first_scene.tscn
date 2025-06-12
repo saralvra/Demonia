@@ -1,0 +1,302 @@
+[gd_scene load_steps=39 format=4 uid="uid://cylbok4oejbc8"]
+
+[ext_resource type="Texture2D" uid="uid://ctcgiuv2f4tmm" path="res://sprites/bg/1.png" id="3_bu6u0"]
+[ext_resource type="Texture2D" uid="uid://dic4hjctnjmyq" path="res://sprites/bg/3.png" id="4_dnyrv"]
+[ext_resource type="Texture2D" uid="uid://8ksk8ysxtsht" path="res://sprites/bg/4.png" id="5_eg8qi"]
+[ext_resource type="AudioStream" uid="uid://dcjlh5tdaueql" path="res://audio/JDSherbert - Nostalgia Music Pack - Disney Films.mp3" id="5_nln1x"]
+[ext_resource type="Texture2D" uid="uid://nvbew4p5m2fw" path="res://sprites/bg/2.png" id="6_ilbgm"]
+[ext_resource type="Texture2D" uid="uid://bupyytv8mjjyd" path="res://sprites/blocks/16-bit-spike-Sheet.png" id="6_uasdg"]
+[ext_resource type="Texture2D" uid="uid://h3mk8g8guaau" path="res://sprites/decor/Lava_frames (16 x 32).png" id="7_8gcin"]
+[ext_resource type="Texture2D" uid="uid://cveu3o0s3hls3" path="res://sprites/blocks/block1.png" id="8_qiabx"]
+[ext_resource type="Texture2D" uid="uid://dwisbfh8lr5lr" path="res://sprites/decor/Bubbling_Oil_frames (16 x 32).png" id="8_srads"]
+[ext_resource type="TileSet" uid="uid://d3lqjqgq1syrt" path="res://tiles/terrain.tres" id="8_vo2d2"]
+[ext_resource type="Texture2D" uid="uid://bm80v1vdgw3a0" path="res://sprites/blocks/block2.png" id="9_rf8on"]
+[ext_resource type="Texture2D" uid="uid://dakgld13hguij" path="res://sprites/blocks/Wooden_Blocks/sprBlocks.png" id="10_1sflq"]
+[ext_resource type="PackedScene" uid="uid://dysl4o2lgyddy" path="res://entities/animated-platform.tscn" id="10_r763e"]
+[ext_resource type="PackedScene" uid="uid://b56ool5oii340" path="res://entities/player.tscn" id="11_do3nv"]
+[ext_resource type="Script" uid="uid://chd87kkf4j8vb" path="res://scripts/camera.gd" id="11_fvnhy"]
+[ext_resource type="Texture2D" uid="uid://b2i8bq8eef6rh" path="res://sprites/blocks/Wooden_Blocks/sprBlocksAlt.png" id="11_qkpgw"]
+[ext_resource type="Texture2D" uid="uid://dpnd8u0lnq6tg" path="res://sprites/blocks/Wooden_Blocks/sprBlocksElements.png" id="12_41dsw"]
+[ext_resource type="PackedScene" uid="uid://dc0nuw5r1be7l" path="res://entities/coin.tscn" id="18_0tpji"]
+[ext_resource type="PackedScene" uid="uid://dgd5r4a6pcuku" path="res://entities/death_zone.tscn" id="18_yi8dg"]
+[ext_resource type="PackedScene" uid="uid://djud0g3k4hmel" path="res://entities/level_end.tscn" id="21_1etsu"]
+[ext_resource type="Script" uid="uid://c4gviqtypen7h" path="res://scripts/level_end.gd" id="22_75wya"]
+[ext_resource type="PackedScene" uid="uid://d4jgqnwaus1n" path="res://entities/cat_in_box.tscn" id="22_ixbt6"]
+[ext_resource type="PackedScene" uid="uid://caaveurjxgxc0" path="res://entities/enemy_rolling.tscn" id="24_n0yrs"]
+[ext_resource type="Script" uid="uid://bg5nnbiab4yg8" path="res://scripts/hud.gd" id="25_qf2uw"]
+[ext_resource type="Texture2D" uid="uid://dqk1amug3114" path="res://sprites/items/coin1.png" id="26_23hf3"]
+[ext_resource type="FontFile" uid="uid://pekfr3b41f3s" path="res://sprites/items/m5x7.ttf" id="27_8vc2k"]
+[ext_resource type="PackedScene" uid="uid://dejcawvj3v4ys" path="res://entities/enemy.tscn" id="27_mc0k6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xdifb"]
+texture = ExtResource("6_uasdg")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a0ho3"]
+texture = ExtResource("7_8gcin")
+0:0/animation_speed = 1.5
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ag5sy"]
+texture = ExtResource("7_8gcin")
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n3q5c"]
+texture = ExtResource("8_srads")
+
+[sub_resource type="TileSet" id="TileSet_x16qy"]
+sources/1 = SubResource("TileSetAtlasSource_a0ho3")
+sources/2 = SubResource("TileSetAtlasSource_ag5sy")
+sources/4 = SubResource("TileSetAtlasSource_n3q5c")
+sources/0 = SubResource("TileSetAtlasSource_xdifb")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4uiyw"]
+texture = ExtResource("8_qiabx")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ksvl1"]
+texture = ExtResource("9_rf8on")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bk7fm"]
+texture = ExtResource("10_1sflq")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wwx6"]
+texture = ExtResource("11_qkpgw")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y0nqv"]
+texture = ExtResource("12_41dsw")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_oub83"]
+physics_layer_0/collision_layer = 1
+sources/3 = SubResource("TileSetAtlasSource_0wwx6")
+sources/2 = SubResource("TileSetAtlasSource_bk7fm")
+sources/1 = SubResource("TileSetAtlasSource_ksvl1")
+sources/0 = SubResource("TileSetAtlasSource_4uiyw")
+sources/4 = SubResource("TileSetAtlasSource_y0nqv")
+
+[node name="world" type="Node2D"]
+
+[node name="bg" type="ParallaxBackground" parent="."]
+
+[node name="bg" type="ParallaxLayer" parent="bg"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(500, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="bg/bg"]
+texture = ExtResource("3_bu6u0")
+centered = false
+
+[node name="tree_row" type="ParallaxLayer" parent="bg"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(575, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="bg/tree_row"]
+texture = ExtResource("4_dnyrv")
+centered = false
+
+[node name="tree_row01" type="ParallaxLayer" parent="bg"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(570, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="bg/tree_row01"]
+texture = ExtResource("5_eg8qi")
+centered = false
+
+[node name="tree_row02" type="ParallaxLayer" parent="bg"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(500, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="bg/tree_row02"]
+texture = ExtResource("6_ilbgm")
+centered = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_nln1x")
+autoplay = true
+
+[node name="tiles" type="Node2D" parent="."]
+
+[node name="oil" type="TileMapLayer" parent="tiles"]
+modulate = Color(0.911, 0, 72.432, 1)
+self_modulate = Color(1, 0.24082, 0.55833, 0.978)
+position = Vector2(0, 96)
+tile_map_data = PackedByteArray("AAAVAAwAAQAAAAAAAAAWAAwAAQAAAAAAAAAXAAwAAQAAAAAAAAAYAAwAAQAAAAAAAAAZAAwAAQAAAAAAAAAVAA0AAgADAAEAAAAWAA0AAgADAAEAAAAXAA0AAgADAAEAAAAYAA0AAgADAAEAAAAZAA0AAgADAAEAAAAaAA0AAgADAAEAAAAbAA0AAgADAAEAAAAaAAwAAQAAAAAAAAAbAAwAAQAAAAAAAAAcAAwAAQAAAAAAAAAdAAwAAQAAAAAAAAAeAAwAAQAAAAAAAAAfAAwAAQAAAAAAAAAcAA0AAgAAAAEAAAAdAA0AAgAAAAEAAAAeAA0AAgAAAAEAAAAfAA0AAgAAAAEAAAAgAA0AAgAAAAEAAAAhAA0AAgABAAEAAAAiAA0AAgACAAEAAAAjAA0AAgADAAEAAAAkAA0AAgAAAAEAAAAlAA0AAgABAAEAAAAmAA0AAgABAAEAAAAnAA0AAgABAAEAAAAoAA0AAgABAAEAAAApAA0AAgABAAEAAAAqAA0AAgACAAEAAAArAA0AAgADAAEAAAAgAAwAAQAAAAAAAAAhAAwAAQAAAAAAAAAiAAwAAQAAAAAAAAAjAAwAAQAAAAAAAAAkAAwAAQAAAAAAAAAlAAwAAQAAAAAAAAAmAAwAAQAAAAAAAAAnAAwAAQAAAAAAAAAoAAwAAQAAAAAAAAApAAwAAQAAAAAAAAAqAAwAAQAAAAAAAAArAAwAAQAAAAAAAAA2AA0AAgAAAAEAAAA3AA0AAgAAAAEAAAA4AA0AAgAAAAEAAAA5AA0AAgAAAAEAAAA6AA0AAgABAAEAAAA7AA0AAgABAAEAAAA8AA0AAgABAAEAAAA2AAwAAQAAAAAAAAA3AAwAAQAAAAAAAAA4AAwAAQAAAAAAAAA5AAwAAQAAAAAAAAA6AAwAAQAAAAAAAAA7AAwAAQAAAAAAAAA8AAwAAQAAAAAAAAA9AAwAAQAAAAAAAAA9AA0AAgABAAEAAAAVAA4AAgABAAEAAAAWAA4AAgABAAEAAAAXAA4AAgABAAEAAAAYAA4AAgABAAEAAAAZAA4AAgABAAEAAAAaAA4AAgABAAEAAAAbAA4AAgABAAEAAAAcAA4AAgABAAEAAAAdAA4AAgABAAEAAAAeAA4AAgABAAEAAAAfAA4AAgABAAEAAAAgAA4AAgABAAEAAAAhAA4AAgABAAEAAAAiAA4AAgABAAEAAAAjAA4AAgABAAEAAAAkAA4AAgABAAEAAAAlAA4AAgABAAEAAAAmAA4AAgABAAEAAAApAA4AAgABAAEAAAAqAA4AAgABAAEAAAAoAA4AAgABAAEAAAAnAA4AAgABAAEAAAArAA4AAgABAAEAAAA3AA4AAgABAAEAAAA4AA4AAgABAAEAAAA5AA4AAgABAAEAAAA6AA4AAgABAAEAAAA+AA0AAgABAAEAAAA+AA4AAgABAAEAAAA9AA4AAgABAAEAAAA8AA4AAgABAAEAAAA7AA4AAgABAAEAAAA2AA4AAgABAAEAAAA1AA4AAgABAAEAAAA0AA4AAgABAAEAAAAzAA4AAgABAAEAAAAyAA4AAgABAAEAAAAxAA4AAgABAAEAAAAwAA4AAgABAAEAAAAvAA4AAgABAAEAAAAuAA4AAgABAAEAAAAtAA4AAgABAAEAAAAsAA4AAgABAAEAAAAUAA4AAgABAAEAAAATAA4AAgABAAEAAAASAA4AAgABAAEAAAARAA4AAgABAAEAAAAQAA4AAgABAAEAAAAPAA4AAgABAAEAAAAOAA4AAgABAAEAAAANAA4AAgABAAEAAAAMAA4AAgABAAEAAAALAA4AAgABAAEAAAAKAA4AAgABAAEAAABBAA4AAgABAAEAAABAAA4AAgABAAEAAAA/AA4AAgABAAEAAAA=")
+tile_set = SubResource("TileSet_x16qy")
+
+[node name="blocks" type="TileMapLayer" parent="tiles"]
+position = Vector2(0, 96)
+tile_map_data = PackedByteArray("AAAeAAEAAAAAAAAAAAAfAAEAAAAAAAAAAAAgAAEAAgABAAAAAAAhAAEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_oub83")
+
+[node name="terrain" type="TileMapLayer" parent="tiles"]
+position = Vector2(8, 88)
+tile_map_data = PackedByteArray("AAAAAAwABAAMAAYAAAAAAA0ABAAMAAYAAAD//w0ABAALAAYAAAD//wwABAALAAYAAAABAA0ABAAMAAYAAAACAA0ABAAMAAYAAAADAA0ABAAMAAYAAAAEAA0ABAAMAAYAAAAFAA0ABAAMAAYAAAAGAA0ABAAMAAYAAAAHAA0ABAAMAAYAAAAIAA0ABAAMAAYAAAAJAA0ABAAMAAYAAAAKAA0ABAAMAAYAAAALAA0ABAAMAAYAAAAMAA0ABAAMAAYAAAANAA0ABAAMAAYAAAAOAA0ABAAMAAYAAAAPAA0ABAAMAAYAAAAQAA0ABAAMAAYAAAARAA0ABAAMAAYAAAASAA0ABAAMAAYAAAATAA0ABAAMAAYAAAAUAA0ABAANAAYAAAD//wQABAALAAUAAAD//wsABAALAAYAAAD//woABAALAAYAAAD//wkABAALAAYAAAD//wgABAALAAYAAAD//wcABAALAAYAAAD//wYABAALAAYAAAD//wUABAALAAYAAAAAAAQABAANAAUAAAAAAAUABAANAAYAAAAAAAYABAANAAYAAAAAAAcABAANAAYAAAAAAAgABAANAAYAAAAAAAkABAANAAYAAAAAAAoABAANAAYAAAAAAAsABAANAAYAAAABAAwABAAMAAUAAAACAAwABAAMAAUAAAADAAwABAAMAAUAAAAEAAwABAAMAAUAAAAFAAwABAAMAAUAAAAGAAwABAAMAAUAAAAHAAwABAAMAAUAAAAIAAwABAAMAAUAAAAJAAwABAAMAAUAAAAKAAwABAAMAAUAAAALAAwABAAMAAUAAAAMAAwABAAMAAUAAAANAAwABAAMAAUAAAAOAAwABAAMAAUAAAAPAAwABAAMAAUAAAAQAAwABAAMAAUAAAARAAwABAAMAAUAAAASAAwABAAMAAUAAAATAAwABAAMAAUAAAAUAAwABAANAAUAAAAsAAwABAAMAAUAAAArAAwABAALAAUAAAAtAAwABAAMAAUAAAAuAAwABAAMAAUAAAAvAAwABAAMAAUAAAAwAAwABAAMAAUAAAAxAAwABAAMAAUAAAAyAAwABAAMAAUAAAAzAAwABAAMAAUAAAA0AAwABAAMAAUAAAA1AAwABAAMAAUAAAA2AAwABAANAAUAAAArAA0ABAALAAYAAAAsAA0ABAAMAAYAAAAtAA0ABAAMAAYAAAAuAA0ABAAMAAYAAAAvAA0ABAAMAAYAAAAwAA0ABAAMAAYAAAAxAA0ABAAMAAYAAAAyAA0ABAAMAAYAAAAzAA0ABAAMAAYAAAA0AA0ABAAMAAYAAAA1AA0ABAAMAAYAAAA2AA0ABAANAAYAAAA9AAwABAALAAYAAAA9AA0ABAALAAYAAAA+AA0ABAAMAAYAAAA/AA0ABAAMAAYAAABAAA0ABAAMAAYAAABBAA0ABAAMAAYAAAA+AAwABAAMAAYAAABBAAwABAAQAAUAAAA/AAwABAAQAAUAAABAAAwABAAQAAUAAAA2AAkABAAOAAgAAAA6AAcABAAOAAgAAABCAAwABAAQAAUAAABDAAwABAAQAAUAAABEAAwABAAQAAUAAABFAAwABAAQAAUAAABGAAwABAAQAAUAAABHAAwABAAMAAUAAABIAAwABAAMAAUAAABJAAwABAAMAAUAAABMAAwABAAQAAUAAABLAAwABAAQAAUAAABKAAwABAAQAAUAAABNAAwABAAQAAUAAABNAA0ABAAMAAYAAABCAA0ABAAMAAYAAABDAA0ABAAMAAYAAABEAA0ABAAMAAYAAABFAA0ABAAMAAYAAABGAA0ABAAMAAYAAABHAA0ABAAMAAYAAABIAA0ABAAMAAYAAABJAA0ABAAMAAYAAABKAA0ABAAMAAYAAABLAA0ABAAMAAYAAABMAA0ABAAMAAYAAABOAAwABAAMAAYAAABOAA0ABAAMAAYAAABPAA0ABAANAAYAAABPAAwABAANAAYAAABPAAsABAANAAYAAABPAAoABAANAAYAAABPAAkABAANAAYAAABPAAgABAANAAYAAABPAAcABAANAAYAAABPAAYABAANAAYAAABPAAUABAANAAYAAABPAAQABAANAAUAAABOAAQABAALAAUAAABOAAUABAALAAYAAABOAAYABAALAAYAAABOAAcABAALAAYAAABOAAgABAALAAYAAABOAAkABAALAAYAAABOAAsABAALAAYAAABOAAoABAALAAYAAAAZAAYABAALAAYAAAAaAAYABAAMAAUAAAAbAAYABAAMAAUAAAAcAAYABAAMAAUAAAAdAAYABAAMAAUAAAAeAAYABAAMAAUAAAAfAAYABAAMAAUAAAAgAAYABAAMAAUAAAAhAAYABAAMAAUAAAAiAAYABAAMAAUAAAAjAAYABAAMAAUAAAAjAAcABAAMAAcAAAAkAAYABAAMAAUAAAAlAAYABAAMAAUAAAAmAAYABAAMAAUAAAAZAAUABAALAAUAAAAaAAUABAANAAUAAAAbAAcABAAMAAcAAAAZAAcABAALAAcAAAAaAAcABAAMAAcAAAAcAAcABAAMAAcAAAAdAAcABAAMAAcAAAAeAAcABAAMAAcAAAAfAAcABAAMAAcAAAAgAAcABAAMAAcAAAAhAAcABAAMAAcAAAAiAAcABAAMAAcAAAAkAAcABAAMAAcAAAAlAAcABAAMAAcAAAAmAAcABAAMAAcAAAAnAAcABAAMAAcAAAAnAAYABAAMAAUAAAAoAAcABAANAAcAAAAoAAUABAANAAUAAAAoAAYABAANAAYAAAAnAAUABAALAAUAAAAEAAgABAALAAgAAAAGAAgABAANAAgAAAAFAAgABAAMAAgAAAA9AAsABAALAAUAAAA+AAsABAANAAUAAAAAAA4ABAAMAAcAAAD//w4ABAALAAcAAAABAA4ABAAMAAcAAAACAA4ABAAMAAcAAAADAA4ABAAMAAcAAAAEAA4ABAAMAAcAAAAFAA4ABAAMAAcAAAAGAA4ABAAMAAcAAAAHAA4ABAAMAAcAAAAIAA4ABAAMAAcAAAAJAA4ABAAMAAcAAAAKAA4ABAAMAAcAAAALAA4ABAAMAAcAAAAMAA4ABAAMAAcAAAANAA4ABAAMAAcAAAAOAA4ABAAMAAcAAAAQAA4ABAAMAAcAAAAPAA4ABAAMAAcAAAATAA4ABAAMAAcAAAASAA4ABAAMAAcAAAARAA4ABAAMAAcAAAAUAA4ABAANAAcAAAArAA4ABAALAAcAAAAsAA4ABAAMAAcAAAAtAA4ABAAMAAcAAAAuAA4ABAAMAAcAAAAvAA4ABAAMAAcAAAAwAA4ABAAMAAcAAAAxAA4ABAAMAAcAAAAyAA4ABAAMAAcAAAAzAA4ABAAMAAcAAAA0AA4ABAAMAAcAAAA1AA4ABAAMAAcAAAA2AA4ABAANAAcAAAA9AA4ABAALAAcAAAA+AA4ABAAMAAcAAAA/AA4ABAAMAAcAAABAAA4ABAAMAAcAAABBAA4ABAAMAAcAAABCAA4ABAAMAAcAAABDAA4ABAAMAAcAAABEAA4ABAAMAAcAAABFAA4ABAAMAAcAAABGAA4ABAAMAAcAAABHAA4ABAAMAAcAAABIAA4ABAAMAAcAAABJAA4ABAAMAAcAAABKAA4ABAAMAAcAAABLAA4ABAAMAAcAAABMAA4ABAAMAAcAAABNAA4ABAAMAAcAAABOAA4ABAAMAAcAAABPAA4ABAANAAcAAAASAAgABAAOAAgAAAAVAAYABAAOAAgAAABIAAgABAALAAgAAABJAAgABAAMAAgAAABKAAgABAANAAgAAAA=")
+tile_set = ExtResource("8_vo2d2")
+
+[node name="platforms" type="Node2D" parent="."]
+position = Vector2(0, 96)
+
+[node name="animated" parent="platforms" instance=ExtResource("10_r763e")]
+position = Vector2(254, 48)
+move_speed = 7.0
+distance = 300
+
+[node name="coins" type="Node2D" parent="."]
+position = Vector2(0, 88)
+
+[node name="coin" parent="coins" instance=ExtResource("18_0tpji")]
+position = Vector2(512, 88)
+
+[node name="coin2" parent="coins" instance=ExtResource("18_0tpji")]
+position = Vector2(488, 88)
+
+[node name="coin3" parent="coins" instance=ExtResource("18_0tpji")]
+position = Vector2(536, 88)
+
+[node name="coin4" parent="coins" instance=ExtResource("18_0tpji")]
+position = Vector2(560, 88)
+
+[node name="coin5" parent="coins" instance=ExtResource("18_0tpji")]
+position = Vector2(104, 120)
+
+[node name="coin8" parent="coins" instance=ExtResource("18_0tpji")]
+position = Vector2(448, 152)
+
+[node name="coin9" parent="coins" instance=ExtResource("18_0tpji")]
+position = Vector2(472, 152)
+
+[node name="coin10" parent="coins" instance=ExtResource("18_0tpji")]
+position = Vector2(496, 152)
+
+[node name="coin11" parent="coins" instance=ExtResource("18_0tpji")]
+position = Vector2(520, 152)
+
+[node name="coin12" parent="coins" instance=ExtResource("18_0tpji")]
+position = Vector2(544, 152)
+
+[node name="coin13" parent="coins" instance=ExtResource("18_0tpji")]
+position = Vector2(568, 152)
+
+[node name="camera" type="Camera2D" parent="."]
+position = Vector2(-112, -8)
+limit_left = 0
+limit_top = 50
+limit_right = 1250
+limit_bottom = 300
+script = ExtResource("11_fvnhy")
+
+[node name="player" parent="." instance=ExtResource("11_do3nv")]
+position = Vector2(43, 261)
+collision_mask = 125
+
+[node name="cat_in_box" parent="." instance=ExtResource("22_ixbt6")]
+position = Vector2(1187, 210)
+
+[node name="LevelEnd" parent="." instance=ExtResource("21_1etsu")]
+position = Vector2(1173, 6)
+script = ExtResource("22_75wya")
+level_end = "res://scenes/winter_scene.tscn"
+
+[node name="collision" parent="LevelEnd" index="0"]
+position = Vector2(11, 199)
+
+[node name="death_zone" parent="." instance=ExtResource("18_yi8dg")]
+position = Vector2(589, 316)
+collision_layer = 4
+
+[node name="Enemy" parent="." instance=ExtResource("24_n0yrs")]
+position = Vector2(301, 267)
+
+[node name="Enemy2" parent="." instance=ExtResource("24_n0yrs")]
+position = Vector2(870, 269)
+
+[node name="hud" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="hud"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("25_qf2uw")
+
+[node name="MarginContainer" type="MarginContainer" parent="hud/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="hud/Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="hud/Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("26_23hf3")
+
+[node name="coins_counter" type="Label" parent="hud/Control/MarginContainer/HBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 1.0
+offset_right = 59.0
+offset_bottom = 24.0
+theme_override_colors/font_shadow_color = Color(1, 0.774673, 0.863892, 1)
+theme_override_colors/font_outline_color = Color(0.969688, 0.138026, 0.573848, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("27_8vc2k")
+text = "000"
+
+[node name="Enemy3" parent="." instance=ExtResource("27_mc0k6")]
+position = Vector2(464, 174)
+SPEED = 70.0
+
+[node name="Enemy4" parent="." instance=ExtResource("27_mc0k6")]
+position = Vector2(1047, 268)
+SPEED = 70.0
+
+[connection signal="body_entered" from="LevelEnd" to="cat_in_box" method="_on_level_end_body_entered"]
+[connection signal="body_entered" from="LevelEnd" to="LevelEnd" method="_on_body_entered"]
+[connection signal="body_entered" from="death_zone" to="player" method="_on_death_zone_body_entered"]
+
+[editable path="LevelEnd"]
