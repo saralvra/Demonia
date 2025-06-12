@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dcjlh5tdaueql"
+path="res://.godot/imported/JDSherbert - Nostalgia Music Pack - Disney Films.mp3-d5200c03af147258491e07c1946c3ac1.mp3str"
+
+[deps]
+
+source_file="res://audio/JDSherbert - Nostalgia Music Pack - Disney Films.mp3"
+dest_files=["res://.godot/imported/JDSherbert - Nostalgia Music Pack - Disney Films.mp3-d5200c03af147258491e07c1946c3ac1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
